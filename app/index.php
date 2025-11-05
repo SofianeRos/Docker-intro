@@ -1,18 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+    include "header.php";
+    $nom = "";
+    if( isset($_GET["nom"]) ){
+        $nom = $_GET['nom'];
+    };
+    $delegue = false;
+    ( $nom == "keylan" || $nom == "charle" ) ? $delegue = true : $delegue = false;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+?>
 
-<body>
-    <h2>Bonjour les prépas</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, voluptatum illum. Pariatur, iure? Aspernatur
-        nihil unde tenetur ullam molestias minus, saepe tempore assumenda itaque officiis, at dolorem iusto iste eaque?
-    </p>
-    <p>un second paragraphe</p>
-</body>
+<main>
+    <section>
+        <h3>Test</h3>
 
-</html>
+        <?php if(strlen($nom) == 0) { ?> <!-- si nom est vide -->
+            <p>Vous n'avez pas de nom</p>
+        <?php }  else if($delegue) { ?> <!-- affiche nom -->
+            <p>votre nom est <?php echo $nom; ?> et tu es le délégué</p>
+        <?php }  else { ?> <!-- affiche nom -->
+            <p>votre nom est <?php echo $nom; ?></p>
+        <?php } ?>
+    </section>
+</main>
+
+<?php
+    include "footer.php";
+?>
