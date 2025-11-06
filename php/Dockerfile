@@ -26,7 +26,7 @@ ENV LC_ALL fr_FR.UTF-8
 
 # installation des extensions pour php
 RUN apk add --no-cache icu-dev \
-    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-install pdo pdo_mysql mysqli \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-enable intl \

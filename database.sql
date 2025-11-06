@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `product` (
     `available` BOOLEAN NOT NULL DEFAULT TRUE ,
     `image` VARCHAR(255) ,
     `description` TEXT NOT NULL,
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `created_at` INT NOT NULL DEFAULT 0,
     `user_id` INT,
     FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 );
