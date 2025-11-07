@@ -26,6 +26,7 @@ services:
     restart: always
     volumes:
       - prepadata:/var/lib/mysql
+      - ./script:/script 
     networks:
       - prepanet
 
